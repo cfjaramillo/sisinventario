@@ -36,7 +36,7 @@
             </div>
         </header>
         <main class="mdl-layout__content">
-            <div class="page-content">
+            <div class="page-content" style="background-color:#ededed">
                 <div class="login">
                 <h3>Iniciar Sesión</h3>
                 <div class="formulario">
@@ -55,7 +55,7 @@
                     </div>
                     </p>
                     <p>
-                    <input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="Submit" value="Iniciar">
+                    <input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" type="Submit" value="Iniciar">
 
                     </p>
 

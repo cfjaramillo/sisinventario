@@ -15,7 +15,7 @@ include('autenticacion.php');
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
             <span class="mdl-layout-title">
-                INVESOFT
+                Sistema de Inventario
             </span>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
@@ -54,40 +54,49 @@ include('autenticacion.php');
         </div>
         <main class="mdl-layout__content">
             <div class="page-content">
-                <?php
+                <div style='margin-top:20pt'>
+                    <div>
+                    <?php
 
-                /* Se obtienen los datos del formulario */
-                $nombre = $_POST['nombre_producto'];
+/* Parámetros de Conexión */
+$host = "localhost";
+$usuario = "root";
+$clave = "";
+$basedatos = "inventario";
 
-                $cantidad = intval($_POST['cantidad']);
 
-                $descripcion = $_POST['descripcion'];
+/* Conexión a la Base de Datos */
+$con = mysqli_connect($host,$usuario,$clave,$basedatos);
 
 
-                /* Parámetros de Conexión MySQL */
-                $host = "localhost";
-                $usuario = "root";
-                $clave = "";
-                $basedatos = "inventario";
+/* Sentencia SQL */
+$sql="SELECT * FROM usuarios";
 
-                /* Conexión a la Base de Datos */
-                $con = mysqli_connect($host,$usuario,$clave,$basedatos);
+/* Resultado de la consulta SQL */
+$result = mysqli_query($con,$sql);
 
-                /* Sentencia SQL */
-                $sql="INSERT INTO productos (nombre_producto, descripcion, fecha_creacion, cantidad) VALUES ('".$nombre."', '".$descripcion."', NOW(), ".$cantidad.")";
 
-                /* Resultado de la consulta SQL */
-                $result = mysqli_query($con,$sql);
 
-                /* Mensje de guardado exitoso y un botón regresar */
-                echo "<div align='center' style='text-align:center'>
-                <h3>Guardado Exitoso </h3>
-                <a href='./index.php' class='mdl-button mdl-js-button mdl-button--raised mdl-button--colored'>
-                Regresar
-                </a>
+/* Tabla de Inventario */
+
+echo "<table align='center' class='mdl-data-table mdl-js-data-table'>";
+echo "<thead><tr><th>Cédula</th><th>Nombre</th><th>>Correo</th><th>Usuario</th><th>Fecha Creación</th><th>Reporte</th></tr></thead>";
+echo "<tbody>";
+while($row = mysqli_fetch_array($result)) {
+    echo "<tr>";
+    echo "<td class='mdl-data-table__cell--non-numeric'>" . $row['cedula'] . "</td>";
+    echo "<td class='mdl-data-table__cell--non-numeric'>" . $row['nombre'] . "</td>";
+    echo "<td class='mdl-data-table__cell--non-numeric'>" . $row['correo'] . "</td>";
+    echo "<td class='mdl-data-table__cell--non-numeric'>" . $row['alias'] . "</td>";
+    echo "<td class='mdl-data-table__cell--non-numeric'>" . $row['fecha_creacion'] . "</td>";
+	echo "<td class='mdl-data-table__cell--non-numeric'><a target='_blank' href='./reporteusr.php?id=".$row['codigo_usuario']."' style='color:black'><i class='material-icons'>assessment</i></td>";
+	echo "</tr>";
+}
+echo "</tbody></table>";
+mysqli_close($con);
+?>
+                    </div>
                 </div>
-                ";
-                ?>
             </div>
         </main>
         </div>

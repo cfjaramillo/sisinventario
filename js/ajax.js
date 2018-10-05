@@ -118,9 +118,6 @@ function retirarCantidad(){
   }
 }
 
-
-
-
 /* Función que agrega la cantidad de productos */
 function agregarCantidad(){
 

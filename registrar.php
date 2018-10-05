@@ -39,6 +39,9 @@ include('autenticacion.php');
             <i class="material-icons">assignment_turned_in</i>
             </span>
             </a>
+            <a class="mdl-navigation__link" href="usuarios.php">Gestionar Usuarios<span>
+            <i class="material-icons">how_to_reg</i>
+            </span></a>
             <a class="mdl-navigation__link" href="crear.php">
             Crear Producto
             <span>
@@ -60,7 +63,7 @@ include('autenticacion.php');
                 <span><h6>Datos del Usuario<span><i class='material-icons'>assignment_ind</i></span></h6></span>
             </div>
             </div>
-            <div class="mdl-grid">
+            <div class="mdl-grid" style="width:80%">
             <div class="mdl-cell mdl-cell--4-col">
                 <!-- Formulario de registro del producto-->
                 <!-- Se invoca la página guardar.php -->

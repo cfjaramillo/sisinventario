@@ -32,6 +32,9 @@
             <i class="material-icons">assignment_turned_in</i>
             </span>
             </a>
+            <a class="mdl-navigation__link" href="usuarios.php">Gestionar Usuarios<span>
+            <i class="material-icons">how_to_reg</i>
+            </span></a>
             <a class="mdl-navigation__link" href="crear.php">
             Crear Producto
             <span>

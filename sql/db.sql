@@ -32,3 +32,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
   fecha_creacion DATE NOT NULL,
   PRIMARY KEY (codigo_usuario)
 );
+
+'USUARIO ADMINISTRADOR'
+
+INSERT INTO USUARIOS (cedula, nombre, alias, correo, clave, fecha_creacion) VALUES ('1','administrador','admin','admin@admin.com','admin',NOW());

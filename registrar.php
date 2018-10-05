@@ -64,7 +64,7 @@ include('autenticacion.php');
             <div class="mdl-cell mdl-cell--4-col">
                 <!-- Formulario de registro del producto-->
                 <!-- Se invoca la página guardar.php -->
-                <form action="guardar.php" method="POST">
+                <form action="guardarpersona.php" method="POST">
 
                     <!-- Nombre del producto -->
                     <div class="mdl-textfield mdl-js-textfield">

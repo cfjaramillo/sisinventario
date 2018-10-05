@@ -44,13 +44,13 @@
 
                     <p>
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" name="usr" type="text" id="usr">
+                        <input class="mdl-textfield__input" required name="usr" type="text" id="usr">
                         <label class="mdl-textfield__label"  for="usr">Usuario</label>
                     </div>
                     </p>
                     <p>
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" name="pwd" type="text" id="pwd">
+                        <input class="mdl-textfield__input" required name="pwd" type="password" id="pwd">
                         <label class="mdl-textfield__label" for="pwd">Clave</label>
                     </div>
                     </p>

@@ -1,3 +1,6 @@
+<?php
+include('autenticacion.php');
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -50,9 +53,11 @@
             <div class="page-content">
 <?php 
 
-
-$usr = $_POST["usr"];
-$pwd = $_POST["pwd"];
+$nombre_usuario = $_POST["nombre_usuario"];
+$cedula = $_POST['cedula'];
+$correo_usuario = $_POST['correo_usuario'];
+$alias_usuario = $_POST['alias_usuario'];
+$password = $_POST['pwd_usuario'];
 
 
 /* Parámetros de Conexión MySQL */
@@ -64,29 +69,20 @@ $basedatos = "inventario";
 /* Conexión a la Base de Datos */
 $con = mysqli_connect($host,$usuario,$clave,$basedatos);
 
-
 /* Sentencia SQL */
-$sql="SELECT * FROM usuarios WHERE alias = '". $usr ."' and clave ='" . $pwd . "'";
+$sql="INSERT INTO usuarios (cedula, nombre, alias, correo, clave, fecha_creacion) VALUES ('".$cedula."', '".$nombre_usuario."', '" . $alias_usuario . "', '" . $correo_usuario . "', '" . $password . "',  NOW())";
 /* Resultado de la consulta SQL */
 $result = mysqli_query($con,$sql);
-$cant = mysqli_num_rows($result);
 
-if ($cant > 0)
-{
-    session_start();
-    $_SESSION['user'] = $result;
-    header('Location: /inventario/index.php');
-    exit;
-}
-else {
-    echo            "<div align='center' style='text-align:center'>
-                <h3>Usuario o Clave incorrectos </h3>
-                <a href='./login.php' class='mdl-button mdl-js-button mdl-button--raised mdl-button--colored'>
+
+echo            "<div align='center' style='text-align:center'>
+                <h3>Guardado Exitoso </h3>
+                <a href='./index.php' class='mdl-button mdl-js-button mdl-button--raised mdl-button--colored'>
                 Regresar
                 </a>
                 </div>
                 ";
-}
+
 ?>
 </div>
         </main>

@@ -44,7 +44,7 @@
         document.getElementById("mdl-js-snackbar").innerHTML=this.responseText;
       }
       else {
-        document.getElementById("mdl-js-snackbar").innerHTML="Error de conexión";
+        //document.getElementById("mdl-js-snackbar").innerHTML=("Error de conexión");
       }
     }
     

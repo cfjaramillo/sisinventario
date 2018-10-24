@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-        <script defer src="/inventario/js/ajax.js"></script>
+        <!--<script defer src="./js/ajax.js"></script>-->
         <style>
             .login {
                 height: 250pt;
@@ -66,7 +66,8 @@
 
                 </div>
 
-
+            <div id="dl-js-snackbar">
+            </div>
 
 
 

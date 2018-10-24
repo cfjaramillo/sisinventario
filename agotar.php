@@ -27,7 +27,7 @@ $result = mysqli_query($con,$sql);
 $cant = mysqli_num_rows($result);
 /* Tabla de Inventario */
 if ($cant > 0){
-echo "<div id='modal' style='background-color:blue'>";
+echo "<div id='modal' style='background-color:red'>";
 echo "<i class='material-icons'>notification_important</i><button onclick='esconder()'><i class='material-icons>clear</i></button>'>";
 while($row = mysqli_fetch_array($result)) {
     echo "<h6>Quedan pocos productos de ".$row['nombre_producto']."</h6>";

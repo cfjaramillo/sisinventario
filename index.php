@@ -7,7 +7,8 @@ include('autenticacion.php');
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-        <script defer src="/inventario/js/ajax.js"></script>
+        <!--<script defer src="/inventario/js/ajax.js"></script>-->
+        <script type="text/javascript" src="./js/ajax.js"></script>
     </head>
     <body>
 
@@ -55,8 +56,8 @@ include('autenticacion.php');
         <main class="mdl-layout__content">
             <div class="page-content">
                 <div style='margin-top:20pt'>
-                    <div>
-                        <label id="txtRespuesta">
+                    <div id="txtRespuesta">
+                        <!--<label id="txtRespuesta">-->
                     </div>
                 </div>
 
@@ -73,9 +74,29 @@ include('autenticacion.php');
                     </div>                    
                     <div>
                         <label id="txtRespuesta2"></label>
-                    </div> 
+                    </div>
                 </div>
             </div>
+
+
+<!-- Modal -->
+<style>
+.modal{
+    margin-left: 76%;
+    margin-top: -24.5%;
+    position: absolute;
+    z-index: 1000;
+    width: 23.5%;
+}
+h6{
+    font-size:10pt;
+}
+</style>
+<div id="mdl-js-snackbar" class="modal">
+</div>
+
+
+
         </main>
         </div>
     </body>

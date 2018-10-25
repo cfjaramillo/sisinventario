@@ -63,6 +63,8 @@ include('autenticacion.php');
 
                 $descripcion = $_POST['descripcion'];
 
+                $precio = intval($_POST['precio']);
+
 
                 /* Parámetros de Conexión MySQL */
                 $host = "localhost";
@@ -74,7 +76,7 @@ include('autenticacion.php');
                 $con = mysqli_connect($host,$usuario,$clave,$basedatos);
 
                 /* Sentencia SQL */
-                $sql="INSERT INTO productos (nombre_producto, descripcion, fecha_creacion, cantidad) VALUES ('".$nombre."', '".$descripcion."', NOW(), ".$cantidad.")";
+                $sql="INSERT INTO productos (nombre_producto, descripcion, fecha_creacion, cantidad,precio) VALUES ('".$nombre."', '".$descripcion."', NOW(), ".$cantidad.", ". $precio . ")";
 
                 /* Resultado de la consulta SQL */
                 $result = mysqli_query($con,$sql);

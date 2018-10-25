@@ -61,25 +61,33 @@ while($row = mysqli_fetch_array($result)) {
     </div>
 
     <div class='mdl-cell mdl-cell--12-col'>
-    <label for='fecha_creacion'><h6><span><i class='material-icons'>lock</i></span>Fecha de Registro:</h6>&emsp;</label>
+    <label for='fecha_creacion'><h6><span><i class='material-icons'>calendar_today</i></span>Fecha de Registro:</h6>&emsp;</label>
     <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
     <input class='mdl-textfield__input' type='text' disabled id='fecha_creacion' value=".$row['fecha_creacion'].">    
     </div>
     </div>
 
     <div class='mdl-cell mdl-cell--5-col'>
-    <label for='cantidad'><h6><span><i class='material-icons'>lock</i></span>Cantidad:</h6>&emsp;</label>
+    <label for='cantidad'><h6><span><i class='material-icons'>assessment</i></span>Cantidad:</h6>&emsp;</label>
     <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
     <input class='mdl-textfield__input' type='text' id='cantidad' disabled value=".$row['cantidad'].">
     </div>
     </div>
     
-    <div class='mdl-cell mdl-cell--5-col'>
+    <div class='mdl-cell mdl-cell--3-col'>
     <label for='descripcion'><h6><span><i class='material-icons'>lock</i></span>Descripción:</h6>&emsp;</label>
     <div class='mdl-textfield mdl-js-textfield'>
-    <textarea class='mdl-textfield__input' type='text' disabled rows= '1' id='descripcion'>".$row['nombre_producto']."</textarea>
+    <textarea class='mdl-textfield__input' type='text' disabled rows= '1' id='descripcion'>".$row['descripcion']."</textarea>
     </div>
     </div>
+
+    <div class='mdl-cell mdl-cell--3-col'>
+    <label for='precio'><h6><span><i class='material-icons'>attach_money</i></span>Precio:</h6>&emsp;</label>
+    <div class='mdl-textfield mdl-js-textfield'>
+    <textarea class='mdl-textfield__input' type='text' disabled rows= '1' id='precio'>$". number_format((float)$row['precio'],2)."</textarea>
+    </div>
+    </div>
+
     ";
 }
 echo "</div>";

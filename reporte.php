@@ -51,6 +51,7 @@ while($row = mysqli_fetch_array($result)) {
     $pdf->Cell(0,20,'DESCRIPCION:    '.$row['descripcion'],0,1);
     $pdf->Cell(0,20,'FECHA REGISTRO:    '.$row['fecha_creacion'],0,1);
     $pdf->Cell(0,20,'CANTIDAD DISPONIBLE:    '.$row['cantidad'],0,1);
+    $pdf->Cell(0,20,'$ PRECIO:    '. number_format((float)$row['precio'],2),0,1);
 
     /* Mostrarmos el archivo PDF */
     $pdf->output("I","inventario.pdf",True);

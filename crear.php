@@ -83,12 +83,23 @@ include('autenticacion.php');
                         <span class="mdl-textfield__error">Ingrese un número válido</span>
                     </div>
         </div>
+
+            <div class="mdl-cell mdl-cell--4-col">
+                                <!-- Cantidad del producto -->
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="precio" name="precio" required>
+                                    <label class="mdl-textfield__label" for="precio">Precio</label>
+                                    <span class="mdl-textfield__error">Ingrese un precio válido</span>
+                                </div>
+                    </div>
+
             <div class="mdl-cell mdl-cell--4-col">
                     <!-- Descripcion -->
                     <div class="mdl-textfield mdl-js-textfield">
                     <textarea class="mdl-textfield__input" type="text" rows= "2" id="descripcion" name="descripcion" required></textarea>
                     <label class="mdl-textfield__label" for="descripcion">Descripción del Producto</label>
                     </div>
+            </div>
             </div>
                     <!-- Botón Enviar -->
                     <table align="center">

@@ -35,3 +35,8 @@ CREATE TABLE IF NOT EXISTS usuarios (
 
 'USUARIO ADMINISTRADOR'
 INSERT INTO USUARIOS (cedula, nombre, alias, correo, clave, fecha_creacion) VALUES ('1','administrador','admin','admin@admin.com','admin',NOW());
+
+
+'PRECIO'
+ALTER TABLE productos
+ADD precio DECIMAL NULL
